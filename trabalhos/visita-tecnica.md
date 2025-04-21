@@ -2,16 +2,13 @@
 
 🟢Grupo: Laryssa, Natiele, Warley, Isabella, Luiz henrique, Pedro 🟢 Turma: TV251 🟢
 
+    🕹️ Nome da empresa: ByteRealms Interactive
 
+    🏢 Localização: Belo Horizonte – MG, Brasil.
 
+    🧠 Fundador: Lucas Fernandes, formado em Design de Jogos e apaixonado por narrativas interativas e tecnologia.
 
-🕹️ Nome da empresa: ByteRealms Interactive
-
-🏢 Localização: Belo Horizonte – MG, Brasil.
-
-🧠 Fundador: Lucas Fernandes, formado em Design de Jogos e apaixonado por narrativas interativas e tecnologia.
-
-📌 Sobre a empresa: A ByteRealms Interactive é um estúdio brasileiro de desenvolvimento de jogos digitais fundado em 2015. Surgiu da vontade de criar experiências únicas, imersivas e com identidade cultural, voltadas para o público brasileiro e internacional. O foco principal da empresa é desenvolver jogos para PC, consoles e mobile, além de atuar com gamificação corporativa e educacional para empresas parceiras.
+    📌 Sobre a empresa: A ByteRealms Interactive é um estúdio brasileiro de desenvolvimento de jogos digitais fundado em 2015. Surgiu da vontade de criar experiências únicas, imersivas e com identidade cultural, voltadas para o público brasileiro e internacional. O foco principal da empresa é desenvolver jogos para PC, consoles e mobile, além de atuar com gamificação corporativa e educacional para empresas parceiras.
 
 
 ### • Como a empresa é organizada?
