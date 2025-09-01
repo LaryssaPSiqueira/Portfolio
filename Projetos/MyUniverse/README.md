@@ -1,7 +1,5 @@
 # ![MyUniverse](https://img.shields.io/badge/MyUniverse-Projeto%20em%20Desenvolvimento-6A0DAD?style=for-the-badge&logo=starship&logoColor=white)
 
-🔗 [Acesse o projeto interativo aqui](https://laryssapsiqueira.github.io/Portfolio/)
-
 Plataforma estilo rede social onde o usuário pode reunir tudo o que ama em um só lugar.
 
 ## ![Objetivo](https://img.shields.io/badge/Objetivo-Explorar%20e%20Compartilhar-000000?style=for-the-badge)
