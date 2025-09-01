@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyUniverse</title>
+
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="fundo-invertido">
+      <h1 class="titulo">My Universe</h1>
+    </div>
+
+    <div class="caixa-oval">
+      <h3 id="tit">Seja Bem-vindo(a)!</h3>
+      <p id="mensagem">Digite o seu login e senha:</p>
+
+      <div class="input-container">
+        <i class="fas fa-user"></i>
+        <input type="text" id="nome" placeholder="LOGIN" />
+      </div>
+
+      <div class="input-container">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="senha" placeholder="SENHA" />
+      </div>
+
+      <h4 id="validacao"></h4>
+      <h4 id="redirecionar"></h4>
+
+      <button onclick="verificardados()">Verificar</button>
+    </div>
+
+    <footer class="rodape">
+      <p>&copy; 2025 Todos os direitos reservados. Criado por My Universe.</p>
+    </footer>
+
+    <script src="index1.js"></script>
+  </body>
+</html>

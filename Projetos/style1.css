@@ -1,0 +1,193 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(
+      270deg,
+      rgba(66, 30, 24, 0.6),
+      rgba(6, 30, 24, 0.6),
+      rgba(133, 121, 109, 0.6)
+    ),
+    url("galhos.png");
+  background-size: 600% 600%, cover;
+  background-position: 0% 50%, center;
+  background-repeat: no-repeat, no-repeat;
+  animation: moverGradiente 10s ease infinite;
+}
+
+/* Animação do fundo */
+@keyframes moverGradiente {
+  0% {
+    background-position: 0% 50%, center;
+  }
+  50% {
+    background-position: 100% 50%, center;
+  }
+  100% {
+    background-position: 0% 50%, center;
+  }
+}
+
+/* Título principal */
+h1.titulo {
+  font-family: "IM Fell DW Pica", serif;
+  font-weight: 400;
+  font-style: italic;
+  color: rgb(37, 23, 2);
+  font-size: 70px;
+  margin: 40px 0 5px;
+  position: relative;
+  left: -730px;
+}
+
+/* Caixa oval principal */
+.caixa-oval {
+  width: 450px;
+  height: 550px;
+  background-color: #f7d1c3ea;
+  border-radius: 50% / 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "IM Fell DW Pica", serif;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.842);
+  animation: aparecer 1.5s ease forwards;
+}
+
+/* Animação de entrada */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Títulos e textos internos */
+.caixa-oval h3 {
+  font-size: 35px;
+  margin: -10px 0 15px;
+  color: rgb(41, 28, 8);
+}
+
+.caixa-oval p {
+  font-size: 20px;
+  margin: 10px 0;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.caixa-oval h4 {
+  font-size: 12px;
+  color: rgb(0, 0, 0);
+  margin-top: 10px;
+  text-align: center;
+  line-height: 1.4;
+  height: 14px;
+}
+
+/* Campo de entrada */
+.input-container {
+  position: relative;
+  width: 220px;
+  margin: 8px 0;
+}
+
+.input-container i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.input-container input {
+  width: 100%;
+  height: 35px;
+  padding: 5px 10px 5px 35px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  font-size: 15px;
+  background-color: #fffaf9;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.input-container input::placeholder {
+  font-size: 10px;
+  color: #aaa;
+}
+
+/* Botão */
+.caixa-oval button {
+  width: 120px;
+  height: 35px;
+  margin-top: 30px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(42, 3, 16, 0.61));
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.caixa-oval button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Rodapé */
+.rodape {
+  width: 100%;
+  padding: 20px 0;
+  margin-top: 120px;
+  text-align: center;
+  color: #000;
+  font-size: 15px;
+  font-family: "IM Fell DW Pica", serif;
+}
+
+.caixa-oval h4#validacao {
+  font-size: 25px;
+  font-weight: bold;
+  color: #000000;
+  margin-top: 15px;
+  text-align: center;
+  display: none;
+  height: auto;
+}
+.caixa-oval h4#validacao.mostrar {
+  display: block;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+#mensagem {
+  background-color: #000000;
+  color: white;
+  font-size: 20px;
+  padding: 15px 25px;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: fit-content;
+  margin: 20px auto;
+  transition: all 0.5s ease;
+}
