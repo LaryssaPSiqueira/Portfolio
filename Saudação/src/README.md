@@ -1,4 +1,4 @@
-# ![Saudação](https://img.shields.io/badge/Sauda%C3%A7%C3%A3o-Mensagem%20de%20Boas%20Vindas-6A0DAD?style=for-the-badge&logo=github&logoColor=white)
+## ![Saudação](https://img.shields.io/badge/Sauda%C3%A7%C3%A3o-Mensagem%20de%20Boas%20Vindas-6A0DAD?style=for-the-badge&logo=github&logoColor=white)
 
 Este projeto exibe uma mensagem de saudação interativa, com base no horário do dia, utilizando HTML, CSS e JavaScript.
 ---
