@@ -1,15 +1,14 @@
 # ![Saudação](https://img.shields.io/badge/Sauda%C3%A7%C3%A3o-Mensagem%20de%20Boas%20Vindas-6A0DAD?style=for-the-badge&logo=github&logoColor=white)
 
-Este projeto exibe uma mensagem de saudação interativa, com base no horário do dia, utilizando HTML, CSS e JavaScript. É uma das primeiras aplicações desenvolvidas no processo de aprendizado em front-end.
-
+Este projeto exibe uma mensagem de saudação interativa, com base no horário do dia, utilizando HTML, CSS e JavaScript.
 ---
 
 ## ![Conteúdo](https://img.shields.io/badge/O%20que%20tem%20aqui-Interface%20din%C3%A2mica-000000?style=for-the-badge)
 
-- Saudação personalizada de acordo com o horário (Bom dia, Boa tarde, Boa noite)
-- Estilização responsiva com CSS
-- Lógica de data/hora com JavaScript
-- Experiência visual agradável e simples
+- Saudação personalizada de acordo com o horário (Bom dia, Boa tarde, Boa noite);
+- Estilização responsiva com CSS;
+- Lógica de data/hora com JavaScript;
+- Experiência visual agradável e simples;
 
 ---
 
@@ -22,9 +21,3 @@ Este projeto exibe uma mensagem de saudação interativa, com base no horário d
 ---
 
 ## ![Status](https://img.shields.io/badge/Status-Conclu%C3%ADdo-6A0DAD?style=for-the-badge)
-
-Este projeto está finalizado, mas pode receber melhorias estéticas ou novas funcionalidades no futuro, como:
-
-- Personalização de temas (modo escuro/claro)
-- Animações adicionais
-- Traduções para outros idiomas
