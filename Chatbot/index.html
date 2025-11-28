@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot Simples com Voz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e6f2ff, #cce0ff);
+            padding: 20px;
+            margin: 0;
+        }
+
+        .chatbox {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            max-width: 450px;
+            margin: auto;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .chatbox:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #004080;
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px;
+            width: 60%;
+            cursor: pointer;
+            background: #3399ff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: #2673cc;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            background: #1a4d80;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="chatbox">
+        <h2>💬 Chatbot por Voz</h2>
+        <p>Faça sua pergunta e receba a resposta com voz!</p>
+        <button onclick="ouvir()">🎙️ Falar Agora</button>
+    </div>
+
+    <script>
+        // VETOR DE 5 PERGUNTAS
+        const perguntas = [
+            "quais foram as atualizações do calendário vacinal da criança",
+            "o que é método contraceptivo natural",
+            "o que é puerperio",
+            "quais os cuidados de enfermagem ao recém nascido e puérperia",
+            "o que é a escala de apgar? qual sua finalidade e como ela funciona"
+        ];
+
+        // VETOR DE 5 RESPOSTAS (mesma ordem das perguntas)
+        const respostas = [
+            "Incluem novas vacinas e ajustes nas idades de aplicação para ampliar a proteção infantil.",
+            "São técnicas que evitam a gravidez sem uso de hormônios ou dispositivos, baseadas na observação do ciclo menstrual e período fértil.",
+            "É o período após o parto, geralmente até 6 semanas, em que o corpo da mulher retorna ao estado pré-gestacional.",
+            "Envolvem higiene, amamentação, prevenção de infecções, apoio emocional e orientação sobre sinais de alerta.",
+            "É um teste feito no bebê logo após o nascimento para avaliar respiração, batimentos, tônus, reflexos e cor da pele. A finalidade é medir rapidamente as condições de adaptação do recém-nascido à vida fora do útero."
+        ];
+
+        // Função que faz o navegador "falar"
+        function falar(texto) {
+            const discurso = new SpeechSynthesisUtterance(texto);
+            discurso.lang = "pt-BR";
+            discurso.rate = 1;
+            window.speechSynthesis.speak(discurso);
+        }
+
+        // Função que escuta o que o usuário fala pelo microfone
+        function ouvir() {
+            const reconhecer = new webkitSpeechRecognition();
+            reconhecer.lang = "pt-BR";
+            reconhecer.start();
+
+            reconhecer.onresult = function (event) {
+                const textoFalado = event.results[0][0].transcript.toLowerCase();
+                let respondeu = false;
+
+                for (let i = 0; i < perguntas.length; i++) {
+                    if (textoFalado.includes(perguntas[i])) {
+                        falar(respostas[i]);
+                        respondeu = true;
+                        break;
+                    }
+                }
+
+                if (!respondeu) {
+                    falar("Desculpe, eu só entendo algumas perguntas específicas.");
+                }
+            };
+        }
+    </script>
+</body>
+
+</html>
