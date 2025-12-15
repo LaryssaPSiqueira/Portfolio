@@ -1,122 +1,109 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatBox</title>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Chatbot Simples com Voz</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #e6f2ff, #cce0ff);
-            padding: 20px;
-            margin: 0;
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        background: #111;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
 
-        .chatbox {
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-            max-width: 450px;
-            margin: auto;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+      .chatbox {
+        background: #1c1c1c;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+      }
 
-        .chatbox:hover {
-            transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-        }
+      h2 {
+        margin-bottom: 15px;
+        font-size: 26px;
+        color: #ff3b3b;
+      }
 
-        h2 {
-            color: #004080;
-            margin-bottom: 20px;
-        }
+      button {
+        padding: 12px 25px;
+        background: #ff3b3b;
+        border: none;
+        color: white;
+        font-size: 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
 
-        button {
-            margin-top: 15px;
-            padding: 12px;
-            width: 60%;
-            cursor: pointer;
-            background: #3399ff;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            transition: background 0.3s ease, transform 0.2s ease;
-        }
-
-        button:hover {
-            background: #2673cc;
-            transform: scale(1.05);
-        }
-
-        button:active {
-            background: #1a4d80;
-        }
+      button:hover {
+        background: #ff5555;
+        transform: scale(1.05);
+      }
     </style>
-</head>
-
-<body>
-
+  </head>
+  <body>
     <div class="chatbox">
-        <h2>💬 Chatbot por Voz</h2>
-        <p>Faça sua pergunta e receba a resposta com voz!</p>
-        <button onclick="ouvir()">🎙️ Falar Agora</button>
+      <h2>Chatbot por voz</h2>
+      <button onclick="ouvir()">Falar Agora</button>
     </div>
 
     <script>
-        // VETOR DE 5 PERGUNTAS
-        const perguntas = [
-            "quais foram as atualizações do calendário vacinal da criança",
-            "o que é método contraceptivo natural",
-            "o que é puerperio",
-            "quais os cuidados de enfermagem ao recém nascido e puérperia",
-            "o que é a escala de apgar? qual sua finalidade e como ela funciona"
-        ];
+      // FUNÇÃO FALAR
+      function falar(texto) {
+        const discurso = new SpeechSynthesisUtterance(texto);
+        discurso.lang = "pt-BR";
+        discurso.rate = 1;
+        window.speechSynthesis.speak(discurso);
+      }
 
-        // VETOR DE 5 RESPOSTAS (mesma ordem das perguntas)
-        const respostas = [
-            "Incluem novas vacinas e ajustes nas idades de aplicação para ampliar a proteção infantil.",
-            "São técnicas que evitam a gravidez sem uso de hormônios ou dispositivos, baseadas na observação do ciclo menstrual e período fértil.",
-            "É o período após o parto, geralmente até 6 semanas, em que o corpo da mulher retorna ao estado pré-gestacional.",
-            "Envolvem higiene, amamentação, prevenção de infecções, apoio emocional e orientação sobre sinais de alerta.",
-            "É um teste feito no bebê logo após o nascimento para avaliar respiração, batimentos, tônus, reflexos e cor da pele. A finalidade é medir rapidamente as condições de adaptação do recém-nascido à vida fora do útero."
-        ];
+      // LISTA DE PERGUNTAS
+      const pergunta = [
+        "atualizações do calendário vacinal da criança",
+        "o que é método contraceptivo natural",
+        "o que seria puerperio",
+        "nascido",
+        "o que é a escala de apgar",
+      ];
 
-        // Função que faz o navegador "falar"
-        function falar(texto) {
-            const discurso = new SpeechSynthesisUtterance(texto);
-            discurso.lang = "pt-BR";
-            discurso.rate = 1;
-            window.speechSynthesis.speak(discurso);
-        }
+      // LISTA DE RESPOSTAS
+      const resposta = [
+        "As atualizações do calendário vacinal da criança envolvem mudanças nas idades, reforços e inclusão de novas vacinas conforme pesquisas e necessidades de saúde pública.",
+        "Método contraceptivo natural é quando a pessoa evita gravidez observando sinais do corpo, como período fértil, temperatura basal ou muco cervical. Não usa hormônios nem dispositivos.",
+        "Puerpério é o período após o parto em que o corpo da mulher volta ao estado normal. Geralmente dura seis semanas e envolve mudanças físicas e hormonais.",
+        "Os cuidados incluem: manter a temperatura do recém nascido, avaliar respiração, cuidar do coto umbilical, apoiar a amamentação, observar sinais de infecção e orientar a puérpera sobre higiene, dor e sangramento.",
+        "A escala de Apgar avalia o bebê no primeiro e no quinto minuto de vida analisando cinco itens: respiração, frequência cardíaca, cor, tônus muscular e resposta a estímulos. Serve para saber se ele precisa de ajuda imediata.",
+      ];
 
-        // Função que escuta o que o usuário fala pelo microfone
-        function ouvir() {
-            const reconhecer = new webkitSpeechRecognition();
-            reconhecer.lang = "pt-BR";
-            reconhecer.start();
+      function ouvir() {
+        const reconhecer = new webkitSpeechRecognition();
+        reconhecer.lang = "pt-BR";
+        reconhecer.start();
 
-            reconhecer.onresult = function (event) {
-                const textoFalado = event.results[0][0].transcript.toLowerCase();
-                let respondeu = false;
+        reconhecer.onresult = function (event) {
+          const textoFalado = event.results[0][0].transcript.toLowerCase();
 
-                for (let i = 0; i < perguntas.length; i++) {
-                    if (textoFalado.includes(perguntas[i])) {
-                        falar(respostas[i]);
-                        respondeu = true;
-                        break;
-                    }
-                }
+          for (let i = 0; i < pergunta.length; i++) {
+            if (textoFalado.includes(pergunta[i])) {
+              falar(resposta[i]);
+              return;
+            }
+          }
 
-                if (!respondeu) {
-                    falar("Desculpe, eu só entendo algumas perguntas específicas.");
-                }
-            };
-        }
+          falar("Desculpe, eu não entendi.");
+        };
+
+        reconhecer.onerror = function () {
+          falar("Opa, deu erro no reconhecimento de voz.");
+        };
+      }
     </script>
-</body>
-
+  </body>
 </html>
